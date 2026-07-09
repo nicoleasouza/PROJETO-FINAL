@@ -1,0 +1,341 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    background:#F4F8FB;
+}
+
+/* Lado Esquerdo */
+
+.left{
+    width:50%;
+    background:linear-gradient(135deg,#084C84,#0B5FA5,#14B8E6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    padding:60px;
+}
+
+.content{
+    max-width:450px;
+}
+
+.logo{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.content h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* Lado Direito */
+
+.right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:420px;
+    background:#fff;
+    padding:45px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.login-card h2{
+    color:#0B5FA5;
+    text-align:center;
+}
+
+.login-card span{
+    display:block;
+    text-align:center;
+    color:#777;
+    margin:10px 0 30px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    color:#0B5FA5;
+    font-weight:500;
+}
+
+.input-group input{
+    width:100%;
+    margin-top:8px;
+    padding:15px;
+    border:2px solid #d9eaf5;
+    border-radius:12px;
+    transition:.3s;
+    outline:none;
+}
+
+.input-group input:focus{
+    border-color:#14B8E6;
+    box-shadow:0 0 10px rgba(20,184,230,.3);
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.options a{
+    text-decoration:none;
+    color:#14B8E6;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:#14B8E6;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0EA5C6;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(20,184,230,.3);
+}
+
+.register{
+    text-align:center;
+    margin-top:25px;
+    color:#666;
+}
+
+.register a{
+    color:#0B5FA5;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:900px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        height:35vh;
+        text-align:center;
+    }
+
+    .right{
+        padding:30px;
+    }
+
+    .login-card{
+        width:100%;
+        max-width:420px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 0;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* LINKS */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* TRACINHO VERDE-ÁGUA */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00d9a6;
+    transition: 0.3s;
+}
+
+/* ANIMAÇÃO DO TRACINHO */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* CONTAINER */
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN */
+.login-box {
+    width: 300px;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(11, 94, 202, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* SENHA */
+.senha-box {
+    position: relative;
+}
+
+#olho {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* BOTÃO */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #38a0db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00d9a6;
+}
+/* ===== CABEÇALHO ===== */
+
+.cabecalho{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 70px;
+
+    background: #005b96;
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.menu{
+    display: flex;
+    gap: 40px;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+/* Linha embaixo quando passa o mouse */
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    background: #7fe7ff;
+    border-radius: 5px;
+
+    transition: .3s;
+}
+
+.menu a:hover{
+    color: #7fe7ff;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+/* Página atual */
+
+.menu .ativo{
+    color: #7fe7ff;
+}
+
+.menu .ativo::after{
+    width: 100%;
+}

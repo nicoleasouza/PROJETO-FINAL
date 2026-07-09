@@ -1,0 +1,381 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f2fbff;
+    color:#333;
+    line-height:1.7;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+header{
+    width:100%;
+    height:80px;
+    background:#0066b2;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+header .logo{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+
+/* ==========================
+   MENU
+========================== */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    position:relative;
+    transition:.4s;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:3px;
+    background:#4fd1c5;
+    transition:.4s;
+}
+
+nav ul li a:hover,
+nav ul li a.ativo{
+    color:#4fd1c5;
+}
+
+nav ul li a:hover::after,
+nav ul li a.ativo::after{
+    width:100%;
+}
+
+/* ==========================
+   BANNER
+========================== */
+
+.banner{
+    margin-top:80px;
+
+    background:linear-gradient(rgba(0,80,150,.9),rgba(0,168,232,.8));
+
+    color:white;
+
+    padding:80px 10% 70px;
+
+    text-align:center;
+}
+
+.banner h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.banner p{
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
+    line-height:35px;
+}
+
+/* ==========================
+   PAINÉIS
+========================== */
+
+.paineis{
+    padding:80px 8%;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+}
+
+.painel{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.painel:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.painel h2{
+
+    color:#0066b2;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.painel .fonte{
+
+    font-size:13px;
+
+    color:#777;
+
+    margin-bottom:18px;
+
+}
+
+.painel .campo{
+
+    margin-bottom:15px;
+
+}
+
+.painel label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#555;
+
+}
+
+.painel input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:2px solid #d8eef8;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.painel input:focus{
+
+    border-color:#00a8e8;
+
+}
+
+.painel button{
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#00a8e8;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.painel button:hover{
+
+    background:#4fd1c5;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+}
+
+.resultado{
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#f2fbff;
+
+    border-radius:15px;
+
+    min-height:60px;
+
+    font-size:15px;
+
+    flex-grow:1;
+
+}
+
+.resultado ul{
+
+    padding-left:20px;
+
+}
+
+.resultado .erro{
+
+    color:#d63031;
+
+}
+
+.resultado .sucesso{
+
+    color:#0066b2;
+
+    font-weight:bold;
+
+}
+
+.ajuda{
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+.ajuda a{
+
+    color:#00a8e8;
+
+    text-decoration:none;
+
+}
+
+.ajuda a:hover{
+
+    color:#4fd1c5;
+
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer{
+
+    background:#003d66;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+footer h2{
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    margin:8px;
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+
+}
+
+nav{
+
+    margin-top:15px;
+
+}
+
+.banner{
+
+    padding:60px 20px;
+
+}
+
+.banner h1{
+
+    font-size:38px;
+
+}
+
+.banner p{
+
+    font-size:18px;
+
+}
+
+.paineis{
+
+    grid-template-columns:1fr;
+
+}
+
+}

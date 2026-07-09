@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Oceano Vivo</title>
+
+    <link rel="stylesheet" href="/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="cabecalho">
+
+    <div class="logo">
+       🌊 Oceano Vivo
+    </div>
+
+    <nav class="menu">
+
+        <a href="/home.html">Home</a>
+
+        <a href="sobre.html">Sobre</a>
+
+        <a href="contato.html">Contato</a>
+
+        <a href="login.html" class="ativo">Login</a>
+
+    </nav>
+
+</header>
+
+    <div class="left">
+
+        <div class="content">
+
+            <div class="logo">🌊 Oceano Vivo</div>
+
+
+            <h1>Bem-vindo!</h1>
+
+
+            <p>
+                Faça login para acompanhar projetos de preservação dos oceanos,
+                contribuir com ações sustentáveis e ajudar a proteger a vida marinha.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="login-card">
+
+            <h2>Entrar</h2>
+
+            <span>Acesse sua conta</span>
+
+            <form>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite seu email">
+                </div>
+
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite sua senha">
+                </div>
+
+                <div class="options">
+
+
+                    <a href="#">Esqueceu a senha?</a>
+
+                </div>
+
+                <button type="submit">Entrar</button>
+
+            </form>
+
+            <div class="register">
+                Não possui uma conta?
+                <a href="#">Cadastre-se</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js">
+        // script.js - Lógica de login para o Oceano Vivo
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.login-card form');
+    const emailInput = document.querySelector('input[type="email"]');
+    const senhaInput = document.querySelector('input[type="password"]');
+    const botaoEntrar = document.querySelector('button[type="submit"]');
+
+    // Cria um elemento para exibir mensagens de erro/sucesso
+    const mensagemEl = document.createElement('p');
+    mensagemEl.classList.add('login-mensagem');
+    mensagemEl.style.display = 'none';
+    form.insertBefore(mensagemEl, botaoEntrar);
+
+    function mostrarMensagem(texto, tipo = 'erro') {
+        mensagemEl.textContent = texto;
+        mensagemEl.style.display = 'block';
+        mensagemEl.style.color = tipo === 'erro' ? '#e63946' : '#2a9d8f';
+    }
+
+    function validarEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    form.addEventListener('submit', async (evento) => {
+        evento.preventDefault();
+        mensagemEl.style.display = 'none';
+
+        const email = emailInput.value.trim();
+        const senha = senhaInput.value;
+
+        // Validações básicas
+        if (!email || !senha) {
+            mostrarMensagem('Preencha todos os campos.');
+            return;
+        }
+
+        if (!validarEmail(email)) {
+            mostrarMensagem('Digite um email válido.');
+            return;
+        }
+
+        if (senha.length < 6) {
+            mostrarMensagem('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        // Desabilita o botão enquanto processa
+        botaoEntrar.disabled = true;
+        botaoEntrar.textContent = 'Entrando...';
+
+        try {
+            // Troque esta URL pelo endpoint real do seu backend
+            const resposta = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, senha })
+            });
+
+            const dados = await resposta.json();
+
+            if (!resposta.ok) {
+                throw new Error(dados.mensagem || 'Email ou senha incorretos.');
+            }
+
+            // Guarda o token de autenticação, se o backend retornar um
+            if (dados.token) {
+                localStorage.setItem('token', dados.token);
+            }
+
+            mostrarMensagem('Login realizado com sucesso!', 'sucesso');
+
+            // Redireciona para a home após login
+            setTimeout(() => {
+                window.location.href = '/home.html';
+            }, 1000);
+
+        } catch (erro) {
+            mostrarMensagem(erro.message || 'Erro ao tentar fazer login. Tente novamente.');
+        } finally {
+            botaoEntrar.disabled = false;
+            botaoEntrar.textContent = 'Entrar';
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

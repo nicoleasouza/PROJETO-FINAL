@@ -1,0 +1,320 @@
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f2fbff;
+    color:#333;
+    line-height:1.8;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+header{
+    width:100%;
+    height:80px;
+    background:#0066b2;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo h1{
+    color:white;
+    font-size:30px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    position:relative;
+    transition:.4s;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0%;
+    height:3px;
+    background:#4fd1c5;
+    transition:.4s;
+}
+
+nav ul li a:hover{
+    color:#4fd1c5;
+}
+
+nav ul li a:hover::after,
+nav ul li a.ativo::after{
+    width:100%;
+}
+
+nav ul li a.ativo{
+    color:#4fd1c5;
+}
+
+/* ==========================
+   BANNER
+========================== */
+
+.banner{
+    margin-top:80px;
+    height:75vh;
+
+    background:
+    linear-gradient(rgba(0,85,160,.75),rgba(0,85,160,.75)),
+    url("../imagens/oceano.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:20px;
+}
+
+.banner-texto{
+    max-width:800px;
+}
+
+.banner h2{
+    font-size:55px;
+    margin-bottom:25px;
+}
+
+.banner p{
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+
+
+.botao{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#00a8e8;
+
+    padding:15px 35px;
+    border-radius:40px;
+
+    transition:.4s;
+}
+#cor{
+color: #eaf9ff;
+
+}
+.botao:hover{
+    background:#4fd1c5;
+    transform:translateY(-5px);
+}
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+section{
+    padding:90px 10%;
+}
+
+section h2{
+    text-align:center;
+    color:#367ad3;
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+section p{
+    text-align:center;
+    font-size:18px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.card{
+    background:white;
+    width:320px;
+    padding:30px;
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,.20);
+}
+
+.card h3{
+    color:#0066b2;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.card p{
+    font-size:16px;
+}
+
+/* ==========================
+   CORES DAS SEÇÕES
+========================== */
+
+.missao{
+    background:white;
+}
+
+.importancia{
+    background:#eaf9ff;
+}
+
+.dicas{
+    background:white;
+}
+
+.curiosidade{
+    background:linear-gradient(135deg,#0066b2,#00a8e8);
+    color:white;
+}
+
+.curiosidade h2{
+    color:white;
+}
+
+.frase{
+    background:#4fd1c5;
+    color:white;
+}
+
+.frase h2{
+    color:white;
+    font-size:36px;
+}
+
+.frase p{
+    font-size:20px;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer{
+    background:#003d66;
+    color:white;
+    text-align:center;
+    padding:45px;
+}
+
+footer h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+footer p{
+    margin-top:10px;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-direction:column;
+    align-items:center;
+}
+
+nav ul li{
+    margin:10px 0;
+}
+
+.banner{
+    height:auto;
+    padding:100px 20px;
+}
+
+.banner h2{
+    font-size:38px;
+}
+
+.banner p{
+    font-size:18px;
+}
+
+section h2{
+    font-size:30px;
+}
+
+.cards{
+    flex-direction:column;
+    align-items:center;
+}
+
+.card{
+    width:100%;
+    max-width:360px;
+}
+
+}
