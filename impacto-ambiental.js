@@ -33,6 +33,7 @@ async function buscarIndicador(codigo) {
     return encontrado;
 }
 
+
 /* ==========================================================
    1) ODS 14 - Vida na Água (visão geral do objetivo)
 ========================================================== */
@@ -118,4 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     carregarODS14();
     carregarUNEP();
     carregarFAO();
+window.onload = function() {
+};
 });
