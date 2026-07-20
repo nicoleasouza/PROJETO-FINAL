@@ -23,4 +23,5 @@ form.addEventListener("submit", function (event) {
     } else {
         alert("Email ou senha incorretos!");
     }
+
 });
