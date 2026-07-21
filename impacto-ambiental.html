@@ -56,21 +56,11 @@
     <h1>Impacto Ambiental</h1>
     <p>
         Indicadores em tempo real sobre a vida marinha, conectados a
-        fontes oficiais da ONU: UNEP e FAO Fisheries.
+        fontes oficiais da ONU: ODS 14, UNEP e FAO Fisheries.
     </p>
 </section>
 
 <section class="paineis">
-
-    <!-- ODS 14 -->
-    <div class="painel">
-        <h2>🌊 ODS 14 — Vida na Água</h2>
-        <p class="fonte">Fonte: UN SDG API — acesso público, sem chave</p>
-
-        <div id="resultado-ods14" class="resultado">
-            Carregando dados...
-        </div>
-    </div>
 
     <!-- UNEP -->
     <div class="painel">
@@ -97,21 +87,25 @@
 <footer>
     <p>🌊 Oceano Vivo • ODS 14 • Vida na Água</p>
 </footer>
+
+<script src="impacto-ambiental.js"></script>
+
+
 <script src="js/script.js"></script>
 
 
 <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
 <script>
-    (function () {
-        window.onload = function () {
+    window.addEventListener("load",
+    function () {
             new BlipChat()
                 .withAppKey('Ym90cHJvamV0bzE6YzM3NjgyNTEtYjI1My00ODkxLWJjZWItNTFlZGM4ZTg1YjUx')
                 .withButton({"color":"#28afc1","icon":"https://blipmediastore.blob.core.windows.net/permanent/Media_4_0b09c942-ad90-4c57-8445-fe6eda120d9d"})
                 .withCustomCommonUrl('https://nicole-alves-de-souza-ovqdd.chat.blip.ai/')
                 .build();
     
-}
-    })();
+    
+});
 </script>
 </body>
 </html>
