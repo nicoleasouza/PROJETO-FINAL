@@ -14,17 +14,15 @@ body{
 /* Lado Esquerdo */
 
 .left{
-    width:50%;
-    background:linear-gradient(135deg,#084C84,#0B5FA5,#14B8E6);
     display:flex;
     justify-content:center;
     align-items:center;
-    color:#fff;
-    padding:60px;
+    padding:120px 60px 60px;
+    color: #0B5FA5;
 }
-
 .content{
-    max-width:450px;
+    max-width:400px;
+    margin-top:30px; /* aumenta ou diminui esse valor */
 }
 
 .logo{
@@ -49,14 +47,14 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding-top:80px; /* aumenta esse valor para descer mais */
 }
-
 .login-card{
-    width:420px;
+    width:340px;
     background:#fff;
-    padding:45px;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
 }
 
 .login-card h2{
@@ -172,15 +170,15 @@ button:hover{
 }
 * {
     margin: 0;
-    padding: 0;
+    padding: 15;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 /* HEADER */
 header {
     background: #111;
-    padding: 15px 0;
+    padding:18px 10;
 }
 
 /* MENU */
@@ -277,7 +275,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
 
-    padding: 18px 70px;
+    padding: 7px 30px;
 
     background: #005b96;
     box-shadow: 0 3px 10px rgba(0,0,0,.15);
